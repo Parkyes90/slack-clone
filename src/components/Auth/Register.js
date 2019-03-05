@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import firebase from '../../firebase';
 import { Grid, Form, Segment, Button, Header, Message, Icon } from "semantic-ui-react";
 import { Link } from "react-router-dom";
+import md5 from 'md5';
 
 class Register extends Component {
   state = {
@@ -9,7 +10,9 @@ class Register extends Component {
     password: '',
     email: '',
     passwordConfirmation: '',
-    errors: []
+    errors: [],
+    loading: false,
+    usersRef: firebase.database().ref('users')
   };
   isFormValid = () => {
     let errors = [];
@@ -41,29 +44,58 @@ class Register extends Component {
   };
 
   handleSubmit = event => {
+    event.preventDefault();
     if (this.isFormValid()) {
+      this.setState({ errors: [], loading: true});
       const { email, password } = this.state;
-      event.preventDefault();
       firebase
         .auth()
         .createUserWithEmailAndPassword(email, password)
         .then(createUser => {
           console.log(createUser);
+          createUser.user.updateProfile({
+            displayName: this.state.username,
+            photoURL: `http://gravatar.com/avatar/${md5(createUser.user.email)}?d=identicon`
+          })
+            .then(() => {
+              this.saveUser(createUser).then(() => {
+                console.log('user saved')
+              });
+              this.setState({loading: false});
+            })
+            .catch(err => {
+              this.setState({errors: [...this.state.errors, err], loading: false});
+              console.error(err);
+            })
         })
         .catch(err => {
-          console.log(err);
+          this.setState({errors: [...this.state.errors, err], loading: false});
+          console.error(err);
         });
     }
 
   };
+  displayErrors = errors =>
+    errors.map((error, i) => <p key={i}>{error.message}</p>);
+
+  handleInputError = (errors, inputName) => errors.some(
+    error => error.message.toLowerCase().includes(inputName)) ? 'error' : ''
+  ;
+
+  saveUser = createUser => {
+    return this.state.usersRef.child(createUser.user.uid).set({
+      name: createUser.user.displayName,
+      avatar: createUser.user.photoURL
+    });
+  };
 
   render() {
-    const { username, password, email, passwordConfirmation } = this.state;
+    const { username, password, email, passwordConfirmation, errors, loading } = this.state;
     const { handleChange, handleSubmit } = this;
     return (
       <Grid textAlign="center" verticalAlign="middle" className="app">
         <Grid.Column style={{maxWidth:450, bottom: '10%'}}>
-          <Header as="h2" icon color="orange" textAlign="center">
+          <Header as="h1" icon color="orange" textAlign="center">
             <Icon name="puzzle piece" color="orange" />
             Register for DevChat
           </Header>
@@ -88,6 +120,7 @@ class Register extends Component {
                 onChange={handleChange}
                 type="email"
                 value={email}
+                className={this.handleInputError(errors, "email")}
               />
               <Form.Input
                 fluid
@@ -98,6 +131,7 @@ class Register extends Component {
                 onChange={handleChange}
                 type="password"
                 value={password}
+                className={this.handleInputError(errors, "password")}
               />
               <Form.Input
                 fluid
@@ -107,11 +141,18 @@ class Register extends Component {
                 placeholder="Password Confirmation"
                 onChange={handleChange}
                 type="password"
+                className={this.handleInputError(errors, "password")}
                 value={passwordConfirmation}
               />
-              <Button color="orange" fluid size="large">Submit</Button>
+              <Button disabled={loading} className={loading ? 'loading' : ''} color="orange" fluid size="large">Submit</Button>
             </Segment>
           </Form>
+          {errors.length > 0 && (
+            <Message error>
+              <h3>Error</h3>
+              {this.displayErrors(errors)}
+            </Message>
+          )}
           <Message>Already a user? <Link to="/login">Login</Link></Message>
         </Grid.Column>
 
