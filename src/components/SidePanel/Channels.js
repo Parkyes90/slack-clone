@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import firebase from 'firebase';
+import firebase from '../../firebase';
 import { connect } from 'react-redux';
 import {Button, Form, Icon, Input, Menu, Modal} from "semantic-ui-react";
 import { setCurrentChannel } from "../../actions";
