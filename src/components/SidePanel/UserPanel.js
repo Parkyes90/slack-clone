@@ -33,6 +33,7 @@ class UserPanel extends Component {
       .signOut()
       .then(() => console.log('signed out!'))
   };
+
   render() {
     const { user } = this.state;
     return (
