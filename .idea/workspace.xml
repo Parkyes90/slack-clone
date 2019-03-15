@@ -2,13 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="92472198-86c4-4f15-b55c-e1760c901c53" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/Messages/FileModal.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Messages/ProgressBar.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Messages/Message.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Messages/Message.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Messages/Messages.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Messages/Messages.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Messages/MessagesForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Messages/MessagesForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Messages/MessagesHeader.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Messages/MessagesHeader.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -42,11 +39,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/Messages/Messages.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="244">
-              <caret line="60" column="61" selection-start-line="60" selection-start-column="61" selection-end-line="60" selection-end-column="61" />
+            <state relative-caret-position="349">
+              <caret line="96" column="64" selection-start-line="96" selection-start-column="64" selection-end-line="96" selection-end-column="64" />
               <folding>
                 <element signature="e#0#49#0" expanded="true" />
               </folding>
@@ -57,7 +54,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/Messages/Message.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
+            <state relative-caret-position="300">
               <caret line="22" column="54" selection-start-line="22" selection-start-column="54" selection-end-line="22" selection-end-column="54" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
@@ -78,8 +75,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/Messages/MessagesHeader.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="10" column="58" selection-start-line="10" selection-start-column="58" selection-end-line="10" selection-end-column="58" />
+            <state relative-caret-position="285">
+              <caret line="19" column="34" selection-start-line="19" selection-start-column="34" selection-end-line="19" selection-end-column="34" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -99,8 +96,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/Messages/MessagesForm.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="199">
-              <caret line="87" column="59" selection-start-line="87" selection-start-column="59" selection-end-line="87" selection-end-column="59" />
+            <state relative-caret-position="979">
+              <caret line="163" column="48" selection-start-line="163" selection-start-column="48" selection-end-line="163" selection-end-column="48" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -108,11 +105,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/Messages/ProgressBar.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="12" selection-start-column="12" selection-end-column="12" />
+            <state relative-caret-position="165">
+              <caret line="12" column="5" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -120,8 +117,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/Messages/FileModal.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="201">
-              <caret line="19" column="18" lean-forward="true" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
+            <state relative-caret-position="255">
+              <caret line="19" column="18" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -157,14 +154,14 @@
         <option value="$PROJECT_DIR$/src/components/ColorPanel/ColorPanel.js" />
         <option value="$PROJECT_DIR$/src/components/SidePanel/UserPanel.js" />
         <option value="$PROJECT_DIR$/src/components/SidePanel/Channels.js" />
-        <option value="$PROJECT_DIR$/src/components/Messages/MessagesHeader.js" />
         <option value="$PROJECT_DIR$/src/components/App.js" />
         <option value="$PROJECT_DIR$/src/components/Messages/FileModal.js" />
         <option value="$PROJECT_DIR$/src/components/Messages/Message.js" />
         <option value="$PROJECT_DIR$/src/components/App.css" />
-        <option value="$PROJECT_DIR$/src/components/Messages/Messages.js" />
-        <option value="$PROJECT_DIR$/src/components/Messages/MessagesForm.js" />
         <option value="$PROJECT_DIR$/src/components/Messages/ProgressBar.js" />
+        <option value="$PROJECT_DIR$/src/components/Messages/MessagesForm.js" />
+        <option value="$PROJECT_DIR$/src/components/Messages/MessagesHeader.js" />
+        <option value="$PROJECT_DIR$/src/components/Messages/Messages.js" />
       </list>
     </option>
   </component>
@@ -306,7 +303,8 @@
       <workItem from="1552020192872" duration="3543000" />
       <workItem from="1552263175977" duration="3628000" />
       <workItem from="1552368052878" duration="15346000" />
-      <workItem from="1552520772153" duration="6935000" />
+      <workItem from="1552520772153" duration="8652000" />
+      <workItem from="1552612423190" duration="2678000" />
     </task>
     <task id="LOCAL-00001" summary="create login and register page">
       <created>1551778167885</created>
@@ -336,17 +334,24 @@
       <option name="project" value="LOCAL" />
       <updated>1552460600628</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="add file upload and progress bar">
+      <created>1552552508414</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1552552508414</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="46282000" />
+    <option name="totallyTimeSpent" value="50677000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1987" y="25" width="1853" height="1055" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27257618" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27590027" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -377,7 +382,8 @@
     <MESSAGE value="add spinner" />
     <MESSAGE value="add main page and apply login state change" />
     <MESSAGE value="add channels" />
-    <option name="LAST_COMMIT_MESSAGE" value="add channels" />
+    <MESSAGE value="add file upload and progress bar" />
+    <option name="LAST_COMMIT_MESSAGE" value="add file upload and progress bar" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/.gitignore">
@@ -524,30 +530,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Messages/Message.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="22" column="54" selection-start-line="22" selection-start-column="54" selection-end-line="22" selection-end-column="54" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/App.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="17" column="14" selection-start-line="17" selection-start-column="14" selection-end-line="17" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Messages/MessagesHeader.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="10" column="58" selection-start-line="10" selection-start-column="58" selection-end-line="10" selection-end-column="58" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Messages/FileModal.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
-          <caret line="19" column="18" lean-forward="true" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -558,20 +554,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Messages/Message.js">
+    <entry file="file://$PROJECT_DIR$/src/components/Messages/ProgressBar.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="54" selection-start-line="22" selection-start-column="54" selection-end-line="22" selection-end-column="54" />
+        <state relative-caret-position="165">
+          <caret line="12" column="5" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Messages/FileModal.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="19" column="18" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
           <folding>
-            <element signature="e#0#26#0" expanded="true" />
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Messages/MessagesHeader.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="34" selection-start-line="19" selection-start-column="34" selection-end-line="19" selection-end-column="34" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Messages/MessagesForm.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
-          <caret line="87" column="59" selection-start-line="87" selection-start-column="59" selection-end-line="87" selection-end-column="59" />
+        <state relative-caret-position="979">
+          <caret line="163" column="48" selection-start-line="163" selection-start-column="48" selection-end-line="163" selection-end-column="48" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
@@ -580,18 +593,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Messages/Messages.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
-          <caret line="60" column="61" selection-start-line="60" selection-start-column="61" selection-end-line="60" selection-end-column="61" />
+        <state relative-caret-position="349">
+          <caret line="96" column="64" selection-start-line="96" selection-start-column="64" selection-end-line="96" selection-end-column="64" />
           <folding>
             <element signature="e#0#49#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Messages/ProgressBar.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="12" selection-start-column="12" selection-end-column="12" />
         </state>
       </provider>
     </entry>
