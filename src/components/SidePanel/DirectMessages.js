@@ -94,7 +94,7 @@ class DirectMessages extends Component {
 
   render() {
     const { users, activeChannel } = this.state;
-    
+
     return (
       <Menu.Menu className="menu">
         <Menu.Item>
