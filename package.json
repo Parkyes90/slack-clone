@@ -11,7 +11,7 @@
     "now": "^14.1.0",
     "react": "^16.4.1",
     "react-avatar-editor": "^11.0.4",
-    "react-color": "^2.14.1",
+    "react-color": "2.14.1",
     "react-dom": "^16.4.1",
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.3.1",
