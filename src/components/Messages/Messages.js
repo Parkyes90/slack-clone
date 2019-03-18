@@ -4,6 +4,8 @@ import MessagesForm from './MessagesForm';
 import Message from './Message';
 import { Segment, Comment } from "semantic-ui-react";
 import firebase from '../../firebase';
+import { connect }  from 'react-redux';
+import {setUserPosts} from "../../actions";
 
 class Messages extends Component {
   state = {
@@ -59,9 +61,25 @@ class Messages extends Component {
         messages: loadedMessages,
         messagesLoading: false
       });
+      this.countUserPosts(loadedMessages);
       this.countUniqueUsers(loadedMessages);
     });
 
+  };
+
+  countUserPosts = messages => {
+    let userPosts = messages.reduce((acc, message) => {
+      if (message.user.name in acc) {
+        acc[message.user.name].count += 1;
+      } else {
+        acc[message.user.name] = {
+          avatar: message.user.avatar,
+          count: 1
+        }
+      }
+      return acc;
+    }, {});
+    this.props.setUserPosts(userPosts);
   };
 
   countUniqueUsers = messages => {
@@ -109,7 +127,7 @@ class Messages extends Component {
     const channelMessages = [...this.state.messages];
     const regex = new RegExp(this.state.searchTerm, 'gi');
     const searchResults = channelMessages.reduce((acc, message) => {
-      if (message.content && message.content.match(regex) || message.user.name.match(regex)) {
+      if ((message.content && message.content.match(regex)) || message.user.name.match(regex)) {
         acc.push(message);
       }
       return acc;
@@ -195,4 +213,4 @@ class Messages extends Component {
   }
 }
 
-export default Messages;
+export default connect(null, { setUserPosts })(Messages);
