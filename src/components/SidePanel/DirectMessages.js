@@ -27,7 +27,7 @@ class DirectMessages extends Component {
       if ( currentUserUid !== snap.key ) {
         let user = snap.val();
         user['uid'] = snap.key;
-        user['status'] = 'offline';
+        user['status'] = 'online';
         loadedUsers.push(user);
         this.setState({ users: loadedUsers });
       }
@@ -94,7 +94,6 @@ class DirectMessages extends Component {
 
   render() {
     const { users, activeChannel } = this.state;
-
     return (
       <Menu.Menu className="menu">
         <Menu.Item>

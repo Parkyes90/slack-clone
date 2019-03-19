@@ -7,6 +7,7 @@ import firebase from '../../firebase';
 import { connect }  from 'react-redux';
 import {setUserPosts} from "../../actions";
 import Typing from './Typing';
+import Skeleton from "./Skeleton";
 
 class Messages extends Component {
   state = {
@@ -37,6 +38,16 @@ class Messages extends Component {
       this.addListeners(channel.id);
       this.addUserStarsListener(channel.id, user.uid);
     }
+  };
+
+  componentDidUpdate(prevProps, prevState, snapshot) {
+    if (this.messagesEnd) {
+      this.scrollToBottom();
+    }
+  };
+
+  scrollToBottom = () => {
+    this.messagesEnd.scrollIntoView({behavior: 'smooth'});
   };
 
   addUserStarsListener = (channelId, userId) => {
@@ -225,11 +236,20 @@ class Messages extends Component {
     ))
   );
 
+  displayMessageSkeleton = loading =>
+    loading ? (
+      <React.Fragment>
+        {[...Array(10)].map((_, i) =>(
+          <Skeleton key={i} />
+        ))}
+      </React.Fragment>
+    ) : null;
+
   render() {
     const {
       messagesRef, channel, user, messages, progressBar,
       numUniqueUsers, searchTerm, searchResults, searchLoading,
-      privateChannel, isChannelStarred, typingUsers}= this.state;
+      privateChannel, isChannelStarred, typingUsers, messagesLoading}= this.state;
     return (
       <Fragment>
         <MessagesHeader
@@ -243,8 +263,10 @@ class Messages extends Component {
         />
         <Segment>
           <Comment.Group className={progressBar ? 'messages__progress' : 'messages'}>
+            {this.displayMessageSkeleton(messagesLoading)}
             {searchTerm ? this.displayMessages(searchResults) : this.displayMessages(messages)}
             {this.displayTypingUsers(typingUsers)}
+            <div ref={node => (this.messagesEnd = node)}></div>
           </Comment.Group>
         </Segment>
         <MessagesForm
