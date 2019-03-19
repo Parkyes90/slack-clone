@@ -27,17 +27,43 @@ class Messages extends Component {
     privateChannel: this.props.isPrivateChannel,
     privateMessagesRef: firebase.database().ref('privateMessages'),
     typingRef: firebase.database().ref('typing'),
-    connectedRef: firebase.database().ref('.info/connected')
+    connectedRef: firebase.database().ref('.info/connected'),
+    listeners: []
 
   };
 
   componentDidMount() {
-    const { channel, user } = this.state;
+    const { channel, user, listeners } = this.state;
 
     if (channel && user) {
+      this.removeListeners(listeners);
       this.addListeners(channel.id);
       this.addUserStarsListener(channel.id, user.uid);
     }
+  };
+
+  componentWillUnmount() {
+    this.removeListeners(this.state.listeners);
+    this.state.connectedRef.off();
+  };
+
+  addToListeners = (id, ref, event) => {
+    const index = this.state.listeners.findIndex(listeners => {
+      return listeners.id === id && listeners.ref === ref && listeners.event === event;
+    });
+
+    if (index === -1) {
+      const newListener = { id, ref, event };
+      this.setState({ listeners: [...this.state.listeners, newListener]});
+    }
+
+  };
+
+  removeListeners = listeners => {
+    listeners.forEach(listener => {
+      listener.ref.child(listener.id).off(listener.event);
+    })
+
   };
 
   componentDidUpdate(prevProps, prevState, snapshot) {
@@ -77,6 +103,7 @@ class Messages extends Component {
         this.setState({ typingUsers })
       }
     });
+    this.addToListeners(channelId, this.state.typingRef, 'child_added');
 
     this.state.typingRef.child(channelId)
       .on('child_removed', snap=> {
@@ -86,6 +113,8 @@ class Messages extends Component {
           this.setState({ typingUsers });
         }
       });
+
+    this.addToListeners(channelId, this.state.typingRef, 'child_removed');
     this.state.connectedRef.on('value', snap => {
       if (snap.val() === true) {
         this.state.typingRef
@@ -113,7 +142,7 @@ class Messages extends Component {
       this.countUserPosts(loadedMessages);
       this.countUniqueUsers(loadedMessages);
     });
-
+    this.addToListeners(channelId, ref, 'child_added');
   };
 
   countUserPosts = messages => {
